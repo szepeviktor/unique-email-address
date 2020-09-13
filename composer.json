@@ -1,0 +1,24 @@
+{
+    "name": "szepeviktor/unique-email-address",
+    "type": "library",
+    "description": "",
+    "license": "MIT",
+    "require": {
+        "php": "~7.2",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "SzepeViktor\\UniqueEmailAddress\\": "src/"
+        }
+    },
+    "prefer-stable": true
+}
