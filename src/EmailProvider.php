@@ -71,12 +71,12 @@ class EmailProvider implements EmailProviderInterface
         if (! $this->isLocal($address)) {
             return $isObject
                 ? $address
-                : $address->toString();
+                : $address->__toString();
         }
 
         return $isObject
             ? $this->applyRules($address)->setDomain($this->domains[0])
-            : $this->applyRules($address)->setDomain($this->domains[0])->toString();
+            : $this->applyRules($address)->setDomain($this->domains[0])->__toString();
     }
 
     /**
@@ -92,7 +92,7 @@ class EmailProvider implements EmailProviderInterface
             $addressB = new EmailAddress($addressB);
         }
 
-        return $this->normalize($addressA)->toString() === $this->normalize($addressB)->toString();
+        return $this->normalize($addressA)->__toString() === $this->normalize($addressB)->__toString();
     }
 
     protected function applyRules(EmailAddress $emailAddress): EmailAddress

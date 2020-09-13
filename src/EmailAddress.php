@@ -12,7 +12,8 @@ class EmailAddress
     /** @var string */
     protected $domain;
 
-    public function __construct(string $address) {
+    public function __construct(string $address)
+    {
         [$this->localPart, $this->domain] = Util::getParts($address);
     }
 
@@ -42,7 +43,7 @@ class EmailAddress
         return $this;
     }
 
-    public function toString(): string
+    public function __toString(): string
     {
         return $this->localPart . self::AT . $this->domain;
     }
