@@ -10,16 +10,15 @@ interface UniqueEmailAddressInterface
     public function isLocal($address): bool;
 
     /**
-     * @template AddressT1
-     * @param AddressT1 $address
-     * @return AddressT1
+     * @template AddressT
+     * @param AddressT $address
+     * @return AddressT
      */
     public function normalize($address);
 
     /**
-     * @template AddressT2
-     * @param AddressT2 $addressA
-     * @param AddressT2 $addressB
+     * @param string|EmailAddress $addressA
+     * @param string|EmailAddress $addressB
      */
     public function compareAddresses($addressA, $addressB): bool;
 }
