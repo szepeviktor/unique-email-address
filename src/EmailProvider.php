@@ -5,8 +5,10 @@ namespace SzepeViktor\UniqueEmailAddress;
 use SzepeViktor\UniqueEmailAddress\Rules\RuleInterface;
 use function array_reduce;
 use function class_exists;
+use function fnmatch;
 use function in_array;
 use function is_subclass_of;
+use function substr;
 
 /**
  * @template TRule of \SzepeViktor\UniqueEmailAddress\Rules\RuleInterface
@@ -55,7 +57,7 @@ class EmailProvider implements EmailProviderInterface
             $address = new EmailAddress($address);
         }
 
-        return in_array($address->getDomain(), $this->domains, true);
+        return $this->domainMatch($address->getDomain());
     }
 
     /**
@@ -95,6 +97,20 @@ class EmailProvider implements EmailProviderInterface
         }
 
         return $this->normalize($addressA)->__toString() === $this->normalize($addressB)->__toString();
+    }
+
+    protected function domainMatch(string $domain): bool
+    {
+        foreach($this->domains as $providerDomain) {
+            if (substr($providerDomain, 0, 2) === '*.' && fnmatch($providerDomain, $domain)) {
+                return true;
+            }
+            if ($providerDomain === $domain) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     protected function applyRules(EmailAddress $emailAddress): EmailAddress

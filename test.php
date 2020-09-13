@@ -1,24 +1,27 @@
 #!/usr/bin/php
 <?php
 
-use SzepeViktor\UniqueEmailAddress\Rules\RemoveMixedCaseRule;
+use Pdp\Rules as PdpRules;
+use SzepeViktor\UniqueEmailAddress\Rules\LowercaseRule;
 use SzepeViktor\UniqueEmailAddress\Rules\RemoveSeparatorRule;
+use SzepeViktor\UniqueEmailAddress\Rules\RemoveSubdomainRule;
 use SzepeViktor\UniqueEmailAddress\Rules\RemoveTagRule;
 use SzepeViktor\UniqueEmailAddress\EmailProvider;
 use SzepeViktor\UniqueEmailAddress\Gmail;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$anymail = (new EmailProvider(['gmail.com', 'googlemail.com']))
+$anymail = (new EmailProvider(['anymail.com', '*.globalmail.com']))
+    ->addRule(RemoveSubdomainRule::class, [PdpRules::createFromPath(__DIR__ . '/data/public_suffix_list.dat')])
     ->addRule(RemoveTagRule::class, ['+'])
     ->addRule(RemoveSeparatorRule::class, ['.'])
-    ->addRule(RemoveMixedCaseRule::class, []);
-$address = 'szepe.viktor+tag@googlemail.com';
+    ->addRule(LowercaseRule::class, []);
+$address = 'szepe.viktor+tag@sub.globalmail.com';
 var_export([
     'INPUT' => $address,
     'isLocal' => $anymail->isLocal($address),
     'normalized' => $anymail->normalize($address),
-    'equal' => $anymail->compare($address, 'szepeviktor@gmail.com')
+    'equal' => $anymail->compare($address, 'szepeviktor@anymail.com')
 ]);
 
 $gmail = new Gmail();

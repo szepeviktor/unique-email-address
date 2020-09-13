@@ -5,7 +5,7 @@ namespace SzepeViktor\UniqueEmailAddress\Rules;
 use SzepeViktor\UniqueEmailAddress\EmailAddress;
 use function mb_strtolower;
 
-class RemoveMixedCaseRule implements RuleInterface
+class LowercaseRule implements RuleInterface
 {
     /**
      * @param list<mixed> $arguments
