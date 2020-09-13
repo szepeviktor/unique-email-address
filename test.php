@@ -1,8 +1,8 @@
 #!/usr/bin/php
 <?php
 
-use SzepeViktor\UniqueEmailAddress\RemoveSeparatorRule;
-use SzepeViktor\UniqueEmailAddress\RemoveTagRule;
+use SzepeViktor\UniqueEmailAddress\Rules\RemoveSeparatorRule;
+use SzepeViktor\UniqueEmailAddress\Rules\RemoveTagRule;
 use SzepeViktor\UniqueEmailAddress\EmailProvider;
 
 require_once __DIR__ . '/vendor/autoload.php';

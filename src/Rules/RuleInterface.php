@@ -1,6 +1,8 @@
 <?php
 
-namespace SzepeViktor\UniqueEmailAddress;
+namespace SzepeViktor\UniqueEmailAddress\Rules;
+
+use SzepeViktor\UniqueEmailAddress\EmailAddress;
 
 interface RuleInterface
 {

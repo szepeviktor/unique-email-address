@@ -1,10 +1,12 @@
 <?php
 
-namespace SzepeViktor\UniqueEmailAddress;
+namespace SzepeViktor\UniqueEmailAddress\Rules;
 
-use function explode;
+use SzepeViktor\UniqueEmailAddress\EmailAddress;
+use function mb_strlen;
+use function str_replace;
 
-class RemoveTagRule implements RuleInterface
+class RemoveSeparatorRule implements RuleInterface
 {
     /** @var string */
     protected $separator;
@@ -15,7 +17,7 @@ class RemoveTagRule implements RuleInterface
     public function __construct(array $arguments)
     {
         if ($arguments === [] || mb_strlen($arguments[0]) !== 1) {
-            throw new /*name*/ \Exception('Tag separator must be exactly 1 character long.');
+            throw new /*name*/ \Exception('Separator must be exactly 1 character long.');
         }
 
         $this->separator = $arguments[0];
@@ -23,9 +25,7 @@ class RemoveTagRule implements RuleInterface
 
     public function apply(EmailAddress $emailAddress): EmailAddress
     {
-        /** @var list<string> $localPartAndTag */
-        $localPartAndTag = explode($this->separator, $emailAddress->getLocalPart(), 2);
-        $emailAddress->setLocalPart($localPartAndTag[0]);
+        $emailAddress->setLocalPart(str_replace($this->separator, '', $emailAddress->getLocalPart()));
 
         return $emailAddress;
     }

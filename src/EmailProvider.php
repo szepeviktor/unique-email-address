@@ -2,12 +2,13 @@
 
 namespace SzepeViktor\UniqueEmailAddress;
 
+use SzepeViktor\UniqueEmailAddress\Rules\RuleInterface;
 use function array_reduce;
 use function class_exists;
 use function in_array;
 
 /**
- * @template RuleT of RuleInterface
+ * @template RuleT of \SzepeViktor\UniqueEmailAddress\Rules\RuleInterface
  */
 class EmailProvider implements EmailProviderInterface
 {

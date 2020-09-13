@@ -12,8 +12,8 @@ class Util
      */
     public static function getParts(string $address): array
     {
-        $parts = explode(EmailAddress::AT, $address, 2);
+        $localPartAndDomain = explode(EmailAddress::AT, $address, 2);
 
-        return [$parts[0], strtolower($parts[1])];
+        return [$localPartAndDomain[0], strtolower($localPartAndDomain[1])];
     }
 }
