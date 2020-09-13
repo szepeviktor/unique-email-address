@@ -13,6 +13,6 @@ final class Gmail extends EmailProvider implements EmailProviderInterface
         $this->domains = ['gmail.com', 'googlemail.com'];
         $this->addRule(RemoveTagRule::class, ['+']);
         $this->addRule(RemoveSeparatorRule::class, ['.']);
-        $this->addRule(LowercaseRule::class, []);
+        $this->addRule(LowercaseRule::class);
     }
 }

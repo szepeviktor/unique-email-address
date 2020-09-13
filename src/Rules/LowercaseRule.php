@@ -10,7 +10,7 @@ class LowercaseRule implements RuleInterface
     /**
      * @param list<mixed> $arguments
      */
-    public function __construct(array $arguments)
+    public function __construct(array $arguments = [])
     {
         if ($arguments !== []) {
             throw new /*name*/ \Exception('This rules accepts no arguments.');
