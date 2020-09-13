@@ -2,6 +2,7 @@
 
 namespace SzepeViktor\UniqueEmailAddress;
 
+use function mb_strlen;
 use function str_replace;
 
 class RemoveSeparatorRule implements RuleInterface

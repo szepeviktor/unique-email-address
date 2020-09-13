@@ -23,9 +23,9 @@ class RemoveTagRule implements RuleInterface
 
     public function apply(EmailAddress $emailAddress): EmailAddress
     {
-        /** @var list<string> $tagAndLocalPart */
-        $tagAndLocalPart = explode($this->separator, $emailAddress->getLocalPart(), 2);
-        $emailAddress->setLocalPart($tagAndLocalPart[0]);
+        /** @var list<string> $localPartAndTag */
+        $localPartAndTag = explode($this->separator, $emailAddress->getLocalPart(), 2);
+        $emailAddress->setLocalPart($localPartAndTag[0]);
 
         return $emailAddress;
     }

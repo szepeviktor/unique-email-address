@@ -3,11 +3,11 @@
 
 use SzepeViktor\UniqueEmailAddress\RemoveSeparatorRule;
 use SzepeViktor\UniqueEmailAddress\RemoveTagRule;
-use SzepeViktor\UniqueEmailAddress\UniqueEmailAddress;
+use SzepeViktor\UniqueEmailAddress\EmailProvider;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$gmail = (new UniqueEmailAddress(['gmail.com', 'googlemail.com']))
+$gmail = (new EmailProvider(['gmail.com', 'googlemail.com']))
     ->addRule(RemoveTagRule::class, ['+'])
     ->addRule(RemoveSeparatorRule::class, ['.']);
 
