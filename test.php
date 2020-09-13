@@ -1,6 +1,7 @@
 #!/usr/bin/php
 <?php
 
+use SzepeViktor\UniqueEmailAddress\Rules\RemoveMixedCaseRule;
 use SzepeViktor\UniqueEmailAddress\Rules\RemoveSeparatorRule;
 use SzepeViktor\UniqueEmailAddress\Rules\RemoveTagRule;
 use SzepeViktor\UniqueEmailAddress\EmailProvider;
@@ -10,7 +11,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $anymail = (new EmailProvider(['gmail.com', 'googlemail.com']))
     ->addRule(RemoveTagRule::class, ['+'])
-    ->addRule(RemoveSeparatorRule::class, ['.']);
+    ->addRule(RemoveSeparatorRule::class, ['.'])
+    ->addRule(RemoveMixedCaseRule::class, []);
 $address = 'szepe.viktor+tag@googlemail.com';
 var_export([
     'INPUT' => $address,
@@ -20,7 +22,7 @@ var_export([
 ]);
 
 $gmail = new Gmail();
-$address = 'szepe.viktor+tag+more@gmail.com';
+$address = 'szepe.VIKtor+tag+more@gmail.com';
 var_export([
     'INPUT' => $address,
     'isLocal' => $gmail->isLocal($address),
