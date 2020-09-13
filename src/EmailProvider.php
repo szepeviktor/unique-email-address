@@ -35,6 +35,9 @@ class EmailProvider implements EmailProviderInterface
         if (! class_exists($class)) {
             throw new \Exception('Rule does not exist.');
         }
+        if (! is_subclass_of($class, RuleInterface::class)) {
+            throw new \Exception('The given class is not a rule.');
+        }
 
         $this->rules[] = new $class($arguments);
 

@@ -12,7 +12,7 @@ $gmail = (new EmailProvider(['gmail.com', 'googlemail.com']))
     ->addRule(RemoveSeparatorRule::class, ['.']);
 
 $a1 = 'szepe.viktor+tag@googlemail.com';
-var_dump([
+var_export([
     'INPUT' => $a1,
     'isLocal' => $gmail->isLocal($a1),
     'normalized' => $gmail->normalize($a1),

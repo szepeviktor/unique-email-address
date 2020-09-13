@@ -1,0 +1,35 @@
+# See https://github.com/github/gitignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE and local environment
+Homestead.json
+Homestead.yaml
+/.vscode/
+/.vagrant/
+# JetBrains IDEs
+/.idea/
+
+# Packages
+/composer.lock
+/vendor
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Application
+.env
+.env.backup
+/public/hot
+/public/storage
+/storage/*.key
+wp-config.php
+
+# Tests
+.php_cs.cache
+.phpunit.result.cache
+
+# Distribution
+/dist/
