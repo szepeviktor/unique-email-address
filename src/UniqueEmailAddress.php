@@ -91,10 +91,7 @@ class UniqueEmailAddress implements UniqueEmailAddressInterface
             $addressB = new EmailAddress($addressB);
         }
 
-        $addressA = $this->normalize($addressA);
-        $addressB = $this->normalize($addressB);
-
-        return $this->applyRules($addressA)->toString() === $this->applyRules($addressB)->toString();
+        return $this->normalize($addressA)->toString() === $this->normalize($addressB)->toString();
     }
 
     protected function applyRules(EmailAddress $emailAddress): EmailAddress
