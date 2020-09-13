@@ -1,7 +1,8 @@
 <?php
 
-namespace SzepeViktor\UniqueEmailAddress;
+namespace SzepeViktor\UniqueEmailAddress\Providers;
 
+use SzepeViktor\UniqueEmailAddress\EmailAddress;
 use SzepeViktor\UniqueEmailAddress\Rules\RuleInterface;
 use function array_reduce;
 use function class_exists;

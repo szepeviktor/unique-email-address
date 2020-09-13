@@ -1,6 +1,6 @@
 <?php
 
-namespace SzepeViktor\UniqueEmailAddress;
+namespace SzepeViktor\UniqueEmailAddress\Providers;
 
 /**
  * @template TRule of \SzepeViktor\UniqueEmailAddress\Rules\RuleInterface

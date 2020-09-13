@@ -2,8 +2,8 @@
 <?php
 
 use Pdp\Rules as PdpRules;
-use SzepeViktor\UniqueEmailAddress\EmailProvider;
-use SzepeViktor\UniqueEmailAddress\Gmail;
+use SzepeViktor\UniqueEmailAddress\Providers\EmailProvider;
+use SzepeViktor\UniqueEmailAddress\Providers\Gmail;
 use SzepeViktor\UniqueEmailAddress\Rules\LowercaseRule;
 use SzepeViktor\UniqueEmailAddress\Rules\RemoveSeparatorRule;
 use SzepeViktor\UniqueEmailAddress\Rules\RemoveSubdomainRule;

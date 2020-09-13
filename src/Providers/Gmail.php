@@ -1,6 +1,6 @@
 <?php
 
-namespace SzepeViktor\UniqueEmailAddress;
+namespace SzepeViktor\UniqueEmailAddress\Providers;
 
 use SzepeViktor\UniqueEmailAddress\Rules\LowercaseRule;
 use SzepeViktor\UniqueEmailAddress\Rules\RemoveSeparatorRule;
