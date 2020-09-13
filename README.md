@@ -1,0 +1,6 @@
+   - be extendable (with an example in the README)
+   - 100% flexible configuration (thus no magic strings or numbers in the source code)
+   - tell whether a valid email address belongs to the configured domains
+   - normalize an address, maybe return [ $userPart, $domainPart ]
+   - compare two addresses
+   - and Nothing else
