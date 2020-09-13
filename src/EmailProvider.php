@@ -6,16 +6,17 @@ use SzepeViktor\UniqueEmailAddress\Rules\RuleInterface;
 use function array_reduce;
 use function class_exists;
 use function in_array;
+use function is_subclass_of;
 
 /**
- * @template RuleT of \SzepeViktor\UniqueEmailAddress\Rules\RuleInterface
+ * @template TRule of \SzepeViktor\UniqueEmailAddress\Rules\RuleInterface
  */
 class EmailProvider implements EmailProviderInterface
 {
     /** @var list<string> */
     protected $domains;
 
-    /** @var list<RuleT> */
+    /** @var list<TRule> */
     protected $rules;
 
     /**
@@ -27,10 +28,11 @@ class EmailProvider implements EmailProviderInterface
     }
 
     /**
-     * @param class-string<RuleT> $class
+     * @param class-string<TRule> $class
      * @param list<mixed> $arguments
+     * @return self
      */
-    public function addRule(string $class, array $arguments = []): self
+    public function addRule(string $class, array $arguments = [])
     {
         if (! class_exists($class)) {
             throw new \Exception('Rule does not exist.');
@@ -45,7 +47,7 @@ class EmailProvider implements EmailProviderInterface
     }
 
     /**
-     * @param string|EmailAddress $address
+     * @param string|\SzepeViktor\UniqueEmailAddress\EmailAddress $address
      */
     public function isLocal($address): bool
     {
@@ -57,9 +59,9 @@ class EmailProvider implements EmailProviderInterface
     }
 
     /**
-     * @template AddressT
-     * @param AddressT $address
-     * @return AddressT
+     * @template TAddress
+     * @param TAddress $address
+     * @return TAddress
      */
     public function normalize($address)
     {
@@ -83,7 +85,7 @@ class EmailProvider implements EmailProviderInterface
      * @param string|EmailAddress $addressA
      * @param string|EmailAddress $addressB
      */
-    public function compareAddresses($addressA, $addressB): bool
+    public function compare($addressA, $addressB): bool
     {
         if (! $addressA instanceof EmailAddress) {
             $addressA = new EmailAddress($addressA);
@@ -99,9 +101,6 @@ class EmailProvider implements EmailProviderInterface
     {
         return array_reduce(
             $this->rules,
-            /**
-             * @param RuleT $rule
-             */
             static function (EmailAddress $emailAddress, RuleInterface $rule): EmailAddress {
                 return $rule->apply($emailAddress);
             },

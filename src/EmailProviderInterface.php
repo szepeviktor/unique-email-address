@@ -2,23 +2,33 @@
 
 namespace SzepeViktor\UniqueEmailAddress;
 
+/**
+ * @template TRule of \SzepeViktor\UniqueEmailAddress\Rules\RuleInterface
+ */
 interface EmailProviderInterface
 {
     /**
-     * @param string|EmailAddress $address
+     * @param class-string<TRule> $class
+     * @param list<mixed> $arguments
+     * @return self
+     */
+    public function addRule(string $class, array $arguments = []);
+
+    /**
+     * @param string|\SzepeViktor\UniqueEmailAddress\EmailAddress $address
      */
     public function isLocal($address): bool;
 
     /**
-     * @template AddressT
-     * @param AddressT $address
-     * @return AddressT
+     * @template TAddress
+     * @param TAddress $address
+     * @return TAddress
      */
     public function normalize($address);
 
     /**
-     * @param string|EmailAddress $addressA
-     * @param string|EmailAddress $addressB
+     * @param string|\SzepeViktor\UniqueEmailAddress\EmailAddress $addressA
+     * @param string|\SzepeViktor\UniqueEmailAddress\EmailAddress $addressB
      */
-    public function compareAddresses($addressA, $addressB): bool;
+    public function compare($addressA, $addressB): bool;
 }
