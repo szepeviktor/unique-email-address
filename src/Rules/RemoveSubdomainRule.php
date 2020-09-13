@@ -18,7 +18,7 @@ class RemoveSubdomainRule implements RuleInterface
     public function __construct(array $arguments)
     {
         if ($arguments === [] || ! $arguments[0] instanceof PdpRules) {
-            throw new /*name*/ \Exception('This rules needs a domain parser.');
+            throw new /*name*/ \Exception('This rule needs a domain parser.');
         }
 
         $this->domainParser = $arguments[0];
