@@ -13,6 +13,17 @@ Normalizes an email address. It removes tags, separators like `+something` and `
 
 Inspired by https://github.com/imliam/php-unique-gmail-address :heavy_check_mark:
 
-## Usage
+### Installation
 
-See test.php
+```bash
+composer require szepeviktor/unique-email-address
+```
+
+### Usage
+
+```php
+$gmail = new Gmail();
+$address = 'firstname.LASTname+label@gmail.com';
+$gmail->isLocal($address); // true
+$gmail->normalize($address); // 'firstnamelastname@gmail.com'
+```
