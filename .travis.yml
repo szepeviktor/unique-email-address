@@ -8,7 +8,11 @@ dist: "bionic"
 php:
   - "7.4"
   - "7.3"
-  - "nightly"
+
+job:
+  include:
+    - php: "nightly"
+      install: "composer update --no-interaction --ignore-platform-reqs"
 
 cache:
   directories:
