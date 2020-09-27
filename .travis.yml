@@ -9,7 +9,7 @@ php:
   - "7.4"
   - "7.3"
 
-job:
+jobs:
   include:
     - php: "nightly"
       install: "composer update --no-interaction --ignore-platform-reqs"
