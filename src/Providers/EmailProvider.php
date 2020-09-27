@@ -27,6 +27,9 @@ class EmailProvider implements EmailProviderInterface
      */
     public function __construct(array $domains)
     {
+        if ($domains === []) {
+            throw new \Exception('Providers need at least 1 domain.');
+        }
         $this->domains = $domains;
     }
 

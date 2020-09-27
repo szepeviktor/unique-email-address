@@ -1,0 +1,23 @@
+# TravisCI configuration for username/projectname
+
+language: php
+os:
+  - linux
+dist: bionic
+
+php:
+  - 7.4
+  - 7.3
+  - 7.2
+  - nighly
+
+cache:
+  directories:
+    - "${HOME}/.composer/cache"
+
+install:
+  - "composer update --no-interaction"
+
+script:
+  - "vendor/bin/pest"
+  - "vendor/bin/phpstan analyze"
