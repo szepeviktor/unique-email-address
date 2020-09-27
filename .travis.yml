@@ -1,15 +1,14 @@
-# TravisCI configuration for username/projectname
+# TravisCI configuration for szepeviktor/unique-email-address
 
-language: php
+language: "php"
 os:
-  - linux
-dist: bionic
+  - "linux"
+dist: "bionic"
 
 php:
-  - 7.4
-  - 7.3
-  - 7.2
-  - nighly
+  - "7.4"
+  - "7.3"
+  - "nightly"
 
 cache:
   directories:
