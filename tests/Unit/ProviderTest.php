@@ -1,6 +1,7 @@
 <?php
 
 use SzepeViktor\UniqueEmailAddress\Providers\EmailProvider;
+use SzepeViktor\UniqueEmailAddress\Providers\Hey;
 use SzepeViktor\UniqueEmailAddress\Rules\RemoveTagRule;
 
 test('provider setup with one rule', function () {
@@ -27,4 +28,13 @@ it('calls all public API methods', function () {
     expect($anymail->isLocal($address))->toBeTrue();
     expect($anymail->normalize($address))->toBe('johndoe@anymail.test');
     expect($anymail->compare($address, 'johndoe-label@anymail.test'))->toBeTrue();
+});
+
+test('HEY.com normalization', function () {
+    $hey = new Hey();
+    $address = 'Jason+personal@HEY.com';
+
+    expect($hey->isLocal($address))->toBeTrue();
+    expect($hey->normalize($address))->toBe('jason@hey.com');
+    expect($hey->compare($address, 'Jason+work@hey.com'))->toBeTrue();
 });
