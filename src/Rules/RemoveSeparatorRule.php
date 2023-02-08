@@ -12,7 +12,7 @@ class RemoveSeparatorRule implements RuleInterface
     protected $separator;
 
     /**
-     * @param list<mixed> $arguments Tag separator in an array.
+     * @param list<string> $arguments Tag separator in an array.
      */
     public function __construct(array $arguments)
     {

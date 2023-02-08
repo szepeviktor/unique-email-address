@@ -1,6 +1,0 @@
-parameters:
-    ignoreErrors:
-        -
-            message: "#^Method SzepeViktor\\\\UniqueEmailAddress\\\\Providers\\\\EmailProvider\\:\\:normalize\\(\\) should return TAddress but returns string\\|SzepeViktor\\\\UniqueEmailAddress\\\\EmailAddress\\.$#"
-            count: 1
-            path: src/Providers/EmailProvider.php

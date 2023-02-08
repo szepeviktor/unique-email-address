@@ -27,7 +27,7 @@ class RemoveSubdomainRule implements RuleInterface
     public function apply(EmailAddress $emailAddress): EmailAddress
     {
         $domain = $this->domainParser->getICANNDomain($emailAddress->getDomain());
-        $registrableDomain = $domain->getRegistrableDomain();
+        $registrableDomain = $domain->registrableDomain()->value();
         if ($registrableDomain === null) {
             throw new /*name*/ \Exception('This is not a registrable domain.');
         }

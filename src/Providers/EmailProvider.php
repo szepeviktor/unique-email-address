@@ -65,7 +65,7 @@ class EmailProvider implements EmailProviderInterface
     }
 
     /**
-     * @template TAddress
+     * @template TAddress of string|EmailAddress
      * @param TAddress $address
      * @return TAddress
      */

@@ -6,13 +6,9 @@ os:
 dist: "bionic"
 
 php:
+  - "8.0"
   - "7.4"
   - "7.3"
-
-jobs:
-  include:
-    - php: "nightly"
-      install: "composer update --no-interaction --ignore-platform-reqs"
 
 cache:
   directories:
@@ -22,5 +18,5 @@ install:
   - "composer update --no-interaction"
 
 script:
-  - "vendor/bin/pest"
-  - "vendor/bin/phpstan analyze"
+  - "composer exec -- pest"
+  - "composer exec -- phpstan"
