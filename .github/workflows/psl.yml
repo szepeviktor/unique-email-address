@@ -4,7 +4,7 @@ name: "Public Suffix List"
 
 on:  # yamllint disable-line rule:truthy
     schedule:
-    # Update Mondy
+    # Update Monday
     - cron: "30 04 * * 1"
     workflow_dispatch: null
 
