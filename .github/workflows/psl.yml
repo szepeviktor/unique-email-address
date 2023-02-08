@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+
+name: "Public Suffix List"
+
+on:  # yamllint disable-line rule:truthy
+    schedule:
+    # Update Mondy
+    - cron: "30 04 * * 1"
+    workflow_dispatch: null
+
+permissions:
+    contents: "read"
+
+concurrency:
+    group: "${{ github.workflow }}-${{ github.ref }}"
+    cancel-in-progress: true
+
+jobs:
+    byte_level:
+        name: "Check"
+        runs-on: "ubuntu-22.04"
+        timeout-minutes: 1
+        steps:
+        -
+            name: "Checkout repository"
+            uses: "actions/checkout@v3"
+        -
+            name: "Update dat file"
+            run: |
+                wget -nv -O "data/public_suffix_list.dat" "https://publicsuffix.org/list/public_suffix_list.dat"
+        -
+            name: "Check difference to repository"
+            run: |
+                git diff --exit-code
