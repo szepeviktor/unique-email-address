@@ -7,7 +7,7 @@ use function explode;
 
 class RemoveTagRule implements RuleInterface
 {
-    /** @var string */
+    /** @var non-empty-string */
     protected $separator;
 
     /**
@@ -19,6 +19,7 @@ class RemoveTagRule implements RuleInterface
             throw new /*name*/ \Exception('Tag separator must be exactly 1 character long.');
         }
 
+        /** @var array{0:non-empty-string} $arguments */
         $this->separator = $arguments[0];
     }
 
