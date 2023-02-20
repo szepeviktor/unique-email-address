@@ -25,10 +25,20 @@ jobs:
             name: "Checkout repository"
             uses: "actions/checkout@v3"
         -
-            name: "Update dat file"
+            name: "Update list"
             run: |
                 wget -nv -O "data/public_suffix_list.dat" "https://publicsuffix.org/list/public_suffix_list.dat"
         -
             name: "Check difference to repository"
+            id: "list_diff"
             run: |
-                git diff --exit-code
+                if ! git diff --exit-code; then
+                    echo "exit_status=1" >>"${GITHUB_OUTPUT}"
+                fi
+        -
+            name: "Create pull request"
+            if: "${{ steps.list_diff.outputs.exit_status == '1' }}"
+            uses: "peter-evans/create-pull-request@v4"
+            with:
+                title: "Update PSL"
+                add-paths: "data/public_suffix_list.dat"
