@@ -9,7 +9,8 @@ on:  # yamllint disable-line rule:truthy
     workflow_dispatch: null
 
 permissions:
-    contents: "read"
+  contents: "write"
+  pull-requests: "write"
 
 concurrency:
     group: "${{ github.workflow }}-${{ github.ref }}"
