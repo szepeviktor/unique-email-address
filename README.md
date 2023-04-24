@@ -1,6 +1,6 @@
 # Unique email address
 
-[![Build Status](https://travis-ci.org/szepeviktor/unique-email-address.svg?branch=master)](https://travis-ci.org/github/szepeviktor/unique-email-address)
+[![Build Status](https://app.travis-ci.com/szepeviktor/unique-email-address.svg?branch=master)](https://app.travis-ci.com/szepeviktor/unique-email-address)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/szepeviktor/unique-email-address.svg)](https://packagist.org/packages/szepeviktor/unique-email-address)
 
 Normalizes an email address. It removes tags, separators like `+something` and `.` in Gmail.
