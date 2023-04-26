@@ -2,24 +2,24 @@
 
 language: "php"
 os:
-  - "linux"
+- "linux"
 dist: "bionic"
 
 php:
-  - "8.1"
-  - "8.0"
-  - "7.4"
+- "8.1"
+- "8.0"
+- "7.4"
 
 cache:
-  directories:
+    directories:
     - "${HOME}/.composer/cache"
 
 before_install:
-  - "phpenv config-rm xdebug.ini"
+- "phpenv config-rm xdebug.ini"
 
 install:
-  - "composer update --no-interaction"
+- "composer update --no-interaction"
 
 script:
-  - "composer exec -- pest"
-  - "composer exec -- phpstan"
+- "composer exec -- pest"
+- "composer exec -- phpstan"
