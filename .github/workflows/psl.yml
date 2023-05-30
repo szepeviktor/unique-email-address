@@ -7,6 +7,7 @@ on:  # yamllint disable-line rule:truthy
     # Update Monday
     - cron: "30 04 * * 1"
     workflow_dispatch: null
+    pull_request: null
 
 permissions:
     contents: "write"
@@ -28,21 +29,5 @@ jobs:
         -
             name: "Update list"
             run: |
-                wget -nv -O "data/public_suffix_list.dat" "https://publicsuffix.org/list/public_suffix_list.dat"
-        -
-            name: "Check difference to repository"
-            id: "list_diff"
-            run: |
-                if ! git diff --exit-code; then
-                    echo "exit_status=1" >>"${GITHUB_OUTPUT}"
-                fi
-        -
-            name: "Create pull request"
-            if: "${{ steps.list_diff.outputs.exit_status == '1' }}"
-            uses: "peter-evans/create-pull-request@v4"
-            with:
-                add-paths: "data/public_suffix_list.dat"
-                branch: "psl-update"
-                commit-message: "Update list"
-                title: "Auto update PSL"
-                delete-branch: true
+                echo "$(lsb_release --short --id)-$(lsb_release --short --release)"
+                echo OK:
