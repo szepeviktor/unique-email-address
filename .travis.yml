@@ -1,5 +1,7 @@
 # TravisCI configuration for szepeviktor/unique-email-address
 
+if: "branch = master"
+
 language: "php"
 os:
 - "linux"
