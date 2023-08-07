@@ -43,6 +43,9 @@ jobs:
             with:
                 add-paths: "data/public_suffix_list.dat"
                 branch: "psl-update"
-                commit-message: "Update list"
+                commit-message: "Update public suffix list"
                 title: "Auto update PSL"
+                body: |
+                    Automated changes by `create-pull-request` GitHub action.
+                    See https://github.com/publicsuffix/list
                 delete-branch: true
