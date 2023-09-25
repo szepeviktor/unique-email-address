@@ -6031,7 +6031,6 @@ k12.ca.us
 k12.co.us
 k12.ct.us
 k12.dc.us
-k12.de.us
 k12.fl.us
 k12.ga.us
 k12.gu.us
@@ -6719,7 +6718,7 @@ org.zw
 
 // newGTLDs
 
-// List of new gTLDs imported from https://www.icann.org/resources/registries/gtlds/v2/gtlds.json on 2023-08-12T15:10:58Z
+// List of new gTLDs imported from https://www.icann.org/resources/registries/gtlds/v2/gtlds.json on 2023-08-26T15:11:08Z
 // This list is auto-generated, don't edit it manually.
 // aaa : American Automobile Association, Inc.
 // https://www.iana.org/domains/root/db/aaa.html
@@ -8997,7 +8996,7 @@ loan
 // https://www.iana.org/domains/root/db/loans.html
 loans
 
-// locker : Dish DBS Corporation
+// locker : Orange Domains LLC
 // https://www.iana.org/domains/root/db/locker.html
 locker
 
@@ -9401,7 +9400,7 @@ nyc
 // https://www.iana.org/domains/root/db/obi.html
 obi
 
-// observer : Dog Beach, LLC
+// observer : Fegistry, LLC
 // https://www.iana.org/domains/root/db/observer.html
 observer
 
@@ -14886,6 +14885,8 @@ js.wpenginepowered.com
 // Submitted by Shahar Talmi <shahar@wix.com>
 wixsite.com
 editorx.io
+wixstudio.io
+wix.run
 
 // XenonCloud GbR: https://xenoncloud.net
 // Submitted by Julian Uphoff <publicsuffixlist@xenoncloud.net>
