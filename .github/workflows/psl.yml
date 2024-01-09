@@ -24,7 +24,7 @@ jobs:
         steps:
         -
             name: "Checkout repository"
-            uses: "actions/checkout@v3"
+            uses: "actions/checkout@v4"
         -
             name: "Update list"
             run: |
@@ -39,7 +39,7 @@ jobs:
         -
             name: "Create pull request"
             if: "${{ steps.list_diff.outputs.exit_status == '1' }}"
-            uses: "peter-evans/create-pull-request@v4"
+            uses: "peter-evans/create-pull-request@v5"
             with:
                 add-paths: "data/public_suffix_list.dat"
                 branch: "psl-update"
