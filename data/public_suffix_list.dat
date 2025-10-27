@@ -5,8 +5,8 @@
 // Please pull this list from, and only from https://publicsuffix.org/list/public_suffix_list.dat,
 // rather than any other VCS sites. Pulling from any other URL is not guaranteed to be supported.
 
-// VERSION: 2025-10-16_17-43-33_UTC
-// COMMIT: 399792921792cacc483219997697443b49b6976f
+// VERSION: 2025-10-25_08-52-55_UTC
+// COMMIT: 7ca3728d124daa3ee5664fb1667f4ae2fc4c1669
 
 // Instructions on pulling and using this list can be found at https://publicsuffix.org/list/.
 
@@ -6796,7 +6796,7 @@ org.zw
 
 // newGTLDs
 
-// List of new gTLDs imported from https://www.icann.org/resources/registries/gtlds/v2/gtlds.json on 2025-10-01T15:18:26Z
+// List of new gTLDs imported from https://www.icann.org/resources/registries/gtlds/v2/gtlds.json on 2025-10-24T15:19:14Z
 // This list is auto-generated, don't edit it manually.
 // aaa : American Automobile Association, Inc.
 // https://www.iana.org/domains/root/db/aaa.html
@@ -7909,10 +7909,6 @@ dtv
 // dubai : Dubai Smart Government Department
 // https://www.iana.org/domains/root/db/dubai.html
 dubai
-
-// dunlop : The Goodyear Tire & Rubber Company
-// https://www.iana.org/domains/root/db/dunlop.html
-dunlop
 
 // dupont : DuPont Specialty Products USA, LLC
 // https://www.iana.org/domains/root/db/dupont.html
@@ -12354,6 +12350,10 @@ base.shop
 // Submitted by Jason Kridner <jkridner@beagleboard.org>
 beagleboard.io
 
+// Bear Blog : https://bearblog.dev
+// Submitted by Herman Martinus <admin@bearblog.dev>
+bearblog.dev
+
 // Beget Ltd
 // Submitted by Lev Nekrasov <lnekrasov@beget.com>
 *.beget.app
@@ -14475,6 +14475,10 @@ cust.retrosnub.co.uk
 // Nabu Casa : https://www.nabucasa.com
 // Submitted by Paulus Schoutsen <infra@nabucasa.com>
 ui.nabu.casa
+
+// Needle Tools GmbH : https://needle.tools
+// Submitted by Felix Herbst <security@needle.tools>
+needle.run
 
 // Net at Work Gmbh : https://www.netatwork.de
 // Submitted by Jan Jaeschke <jan.jaeschke@netatwork.de>
