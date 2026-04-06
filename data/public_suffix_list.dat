@@ -5,8 +5,8 @@
 // Please pull this list from, and only from https://publicsuffix.org/list/public_suffix_list.dat,
 // rather than any other VCS sites. Pulling from any other URL is not guaranteed to be supported.
 
-// VERSION: 2026-03-06_02-20-37_UTC
-// COMMIT: a7621207f34b3a739a5cfb2c47a518b0b9054fe6
+// VERSION: 2026-04-02_06-25-15_UTC
+// COMMIT: ba7dbf3ec5e7d7024a32ea7fa724a3a2b2c7d56f
 
 // Instructions on pulling and using this list can be found at https://publicsuffix.org/list/.
 
@@ -13453,10 +13453,16 @@ us-4.evennode.com
 relay.evervault.app
 relay.evervault.dev
 
+// Exe : https://exe.dev
+// Submitted by Josh Bleecher Snyder <security@exe.dev>
+exe.xyz
+
 // Expo : https://expo.dev/
-// Submitted by James Ide <psl@expo.dev>
+// Submitted by Phil Pluckthun <psl@expo.dev>
 expo.app
+on.expo.app
 staging.expo.app
+on.staging.expo.app
 
 // Fabrica Technologies, Inc. : https://www.fabrica.dev/
 // Submitted by Eric Jiang <eric@fabrica.dev>
@@ -13594,6 +13600,7 @@ fh-muenster.io
 
 // Figma : https://www.figma.com
 // Submitted by Nick Frost <psl@figma.com>
+payload.dev
 figma.site
 figma-gov.site
 preview.site
@@ -14301,10 +14308,6 @@ us1-plenit.com
 // Submitted by Camilo Sperberg <tech@webador.com>
 webadorsite.com
 jouwweb.site
-
-// Joyent : https://www.joyent.com/
-// Submitted by Brian Bennett <brian.bennett@joyent.com>
-*.triton.zone
 
 // JS.ORG : http://dns.js.org
 // Submitted by Stefan Keim <admin@js.org>
@@ -15086,6 +15089,10 @@ gl.srv.us
 // Peplink | Pepwave : http://peplink.com/
 // Submitted by Steve Leung <steveleung@peplink.com>
 mypep.link
+
+// Perplexity AI : https://www.perplexity.ai/
+// Submitted by Alec Xiang <security@perplexity.ai>
+pplx.app
 
 // Perspecta : https://perspecta.com/
 // Submitted by Kenneth Van Alstyne <kvanalstyne@perspecta.com>
@@ -15980,6 +15987,10 @@ lima.zone
 *.transurl.eu
 site.transip.me
 *.transurl.nl
+
+// Triton Data Center project : https://tritondatacenter.com
+// Submitted by Triton Data Center staff <tickets@tritondatacenter.com>
+*.triton.zone
 
 // Tunnelmole: https://tunnelmole.com
 // Submitted by Robbie Cahill <support@tunnelmole.com>
